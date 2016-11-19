@@ -1,0 +1,46 @@
+h1. Bats project (version 1.0-beta) - Bandit Algorithms and Tree Search
+
+
+h2. Structure of this project
+
+* lib/ contains functions and toolboxes written by others and necessary to the functioning of the Bats Toolbox
+* Bats/ contains the the Bats Toolbox for Matlab
+* ToyTS/ is an application of Bats to a toy tree search problem
+* Pinview/ is an application of Bats to a content-based image retrieval problem
+
+
+h2. Getting Started
+
+From the project's root directory, at the Matlab command line:
+
+# Initialise path to include the directories listed above, and clear variables:
+@init@
+
+# Browse the documentation:
+@doc Bats@
+
+# Run tests, for instance on the UCB class:
+@TestUCB@
+
+# Run applications, for instance the toy tree search problem:
+@nit=1000; nruns=1; learnHyper=0; fixPbInstances=true;@
+@ToyTS.Experiments({'UCT', 'GPTS'}, 'B', [5, 20, 50, 100], nit, nruns, learnHyper, fixPbInstances)@
+
+Here is some sample code for bandit problems with independent arms:
+@rl = rand(1,N); % rewards list (N arms)@
+@e = EnvironmentBandit('bernoulli', rl);@
+@b = UCB(N);@
+@x = b.choose();@
+@y = e.play(x);@
+@b.train(x, y);@
+
+
+h2. Copyright and License
+
+Bats (C) Louis Dorard, 2010-2011. This work is licensed under a GNU General Public License (http://www.gnu.org/licenses/gpl.html). The software is provided "as is", without warranty of any kind, express or implied. Please consult the copyright notice and licence of the other toolboxes. 
+
+
+h3. Contact
+
+louis@dorard.me
+Please notify me if you use, distribute or modify this work.

@@ -1,0 +1,6 @@
+TestTrainingSet
+TestRandBAlg
+TestUCB
+TestLinRel
+TestKLinRel
+TestGPB
